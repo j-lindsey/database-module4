@@ -26,12 +26,9 @@ ON I.InvoiceID = LI.InvoiceID
 ORDER BY VendorName, InvoiceDate, InvoiceNumber, InvoiceSequence;
 
 --5.
-SELECT VendorName FROM Vendors
+SELECT VendorName, VendorState FROM Vendors
+WHERE VendorState = 'CA'
 UNION
-SELECT VendorState,
-CASE 
-	WHEN VendorState = 'CA' THEN 'CA'
-	ELSE 'Outside CA'
-END
-FROM Vendors
+SELECT VendorName, 'Outside CA' FROM Vendors
+WHERE VendorState != 'CA'
 ORDER BY VendorName;
