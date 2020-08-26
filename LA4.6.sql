@@ -5,7 +5,7 @@ CREATE DATABASE Film_World;
 CREATE TABLE Movie(
 	movieid int PRIMARY KEY,
 	title varchar(255) NOT NULL,
-	companyid int FOREIGN KEY REFERENCES Company(companyid),
+	companyid int,
 	releaseDate date,
 	boxOfficeRevenue decimal,
 	reviewScore float CHECK (reviewScore >=0 AND reviewScore <=10)
@@ -22,3 +22,6 @@ CREATE TABLE ActedIn(
 	movieid int FOREIGN KEY REFERENCES Movie(movieid),
 	actorid int FOREIGN KEY REFERENCES Actor(actorid)
 );
+
+
+
