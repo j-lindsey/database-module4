@@ -37,5 +37,5 @@ SELECT FirstName, LastName, Phone FROM Customer;
 --6.
 SELECT Name FROM Artist
 UNION 
-SELECT Composer FROM Track
+SELECT DISTINCT Composer FROM Track
 WHERE Composer IS NOT NULL
